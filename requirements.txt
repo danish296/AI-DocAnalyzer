@@ -11,3 +11,4 @@ chromadb
 torch
 langchain-community
 pypdf
+langchain-huggingface
