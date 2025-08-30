@@ -9,3 +9,5 @@ sentence-transformers
 langchain
 chromadb
 torch
+langchain-community
+pypdf
