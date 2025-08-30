@@ -1163,7 +1163,6 @@ if st.session_state.documents:
             st.success("✅ Ready")
         else:
             st.warning("⚠️ Select Document")
-
 # Enhanced footer
 st.markdown("""
 <div class="footer">
