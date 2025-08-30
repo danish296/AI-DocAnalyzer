@@ -11,7 +11,7 @@ import gc
 import torch
 
 # Document processing imports
-from langchain.document_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
@@ -687,9 +687,9 @@ class DocumentProcessor:
                 for i in range(0, len(chunks), batch_size):
                     batch_chunks = chunks[i:i + batch_size]
                     if i == 0:
-                        vectorstore = Chroma.from_documents(batch_chunks, embeddings)
+                        vectorstore = Chroma.from_documents(batch_chunks, embeddings, persist_directory=None)
                     else:
-                        batch_vectorstore = Chroma.from_documents(batch_chunks, embeddings)
+                        batch_vectorstore = Chroma.from_documents(batch_chunks, embeddings, persist_directory=None)
                         # Merge vectorstores (simplified approach)
                         vectorstore.add_documents(batch_chunks)
                     
